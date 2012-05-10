@@ -1,4 +1,17 @@
 TestRespondWithPolymorphic::Application.routes.draw do
+
+  resources :languages
+
+  resources :taggings
+
+  resources :tags
+
+  resources :comments
+
+  resources :tasks
+
+  resources :projects
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
