@@ -16,5 +16,8 @@
   .tags.span4
     %h3 Taggings
     %ul.tags=render @project.taggings, :wrapper => :li
-    %h4 Add new Tagging
-    = render :partial => "taggings/form", :locals => { :taggable => @project }
+    %h4 Add some tags
+    = simple_form_for @project do |f|
+      = f.input :tag_tokens, data:{load: @project.tags}, :as => :text
+      = f.button :submit
+    -# render :partial => "taggings/form", :locals => { :taggable => @project }
