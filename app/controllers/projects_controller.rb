@@ -23,8 +23,15 @@ class ProjectsController < ApplicationController
     if project.destroy
       redirect_to :back, :notice => "Project was removed successfully"
     else
-      redirect_to :back, :notice => "Coudn't remove Project"
+      redirect_to :back, :error => "Coudn't remove Project"
     end
+  end
+
+  def update
+    project = Project.find(params[:id])
+    tags = Tag.find(Tag.ids_from_tokens(params[:project][:tag_tokens]))
+    project.tags << tags
+    redirect_to :back, :notice => "Project was updated successfully"
   end
 
 end
