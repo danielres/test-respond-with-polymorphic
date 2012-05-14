@@ -40,3 +40,5 @@ gem 'simple_form'
 
 gem 'haml'
 gem 'sass-twitter-bootstrap-rails', '~> 1.0'
+
+gem 'devise'

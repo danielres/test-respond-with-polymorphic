@@ -7,6 +7,7 @@
     = csrf_meta_tags
   %body
     .container
+      = render :partial => 'users/userbox'
       = render :partial => 'languages/menu'
       - flash.each do |name, msg|
         %div
