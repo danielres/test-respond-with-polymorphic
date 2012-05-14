@@ -1,5 +1,9 @@
 TestRespondWithPolymorphic::Application.routes.draw do
 
+  devise_for :users
+
+  resources :users
+
   resources :languages
 
   resources :taggings
@@ -11,6 +15,10 @@ TestRespondWithPolymorphic::Application.routes.draw do
   resources :tasks
 
   resources :projects
+
+
+  root :to => "projects#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
