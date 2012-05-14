@@ -1,9 +1,9 @@
 - wrapper    ||= :div
 - individual ||= false
 
-- if individual
-- else
-  = content_tag_for wrapper, comment do
+= content_tag_for wrapper, comment do
+  - if individual
+  - else
     .meta
       %p= l(comment.created_at, :format => :short)
       %p= t('by') + ': ' + link_to(comment.author, comment.author)
