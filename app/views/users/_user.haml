@@ -8,5 +8,9 @@
     .created_at
       = t('date created') + ':'
       = l(user.created_at, :format => :short)
+    %h3= t('comments')
+    = render user.comments
+
+
 
 - else

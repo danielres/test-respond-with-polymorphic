@@ -4,6 +4,8 @@
 - if individual
 - else
   = content_tag_for wrapper, comment do
-    .meta= l comment.created_at, :format => :short
+    .meta
+      %p= l(comment.created_at, :format => :short)
+      %p= t('by') + ': ' + link_to(comment.author, comment.author)
     .body= simple_format comment.body
     .actions= link_to 'x', comment, :method => :delete

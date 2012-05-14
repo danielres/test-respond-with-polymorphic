@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
+    @comment.author = current_user
     flash[:notice] = "Comment was created successfully." if @comment.save
     redirect_to :back
   end
