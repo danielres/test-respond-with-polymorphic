@@ -4,7 +4,7 @@ class Tag < ActiveRecord::Base
   has_many :projects,  :through => :taggings, :source => :taggable, :source_type => 'Project'
   has_many :tasks,     :through => :taggings, :source => :taggable, :source_type => 'Task'
   belongs_to :language
-  validates :name, :language_id, :presence => true
+#   validates :name, :language_id, :presence => true
 
   def taggables
     projects + tasks
